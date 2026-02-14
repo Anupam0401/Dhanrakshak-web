@@ -9,7 +9,7 @@ export const siteConfig = {
   // Basic Info
   name: 'DhanRakshak',
   tagline: 'Personal finance, made simple and private',
-  description: 'A privacy-first, local-first personal finance tracking app for Android. Track expenses, manage groups, set savings goals, and sync with Splitwise.',
+  description: 'A privacy-first, local-first personal finance tracking app for Android. Track expenses, manage budgets, analyze spending patterns, and plan savings goals — all while keeping your data in your control.',
   
   // URLs
   url: 'https://anupam0401.github.io',
@@ -19,7 +19,7 @@ export const siteConfig = {
   githubIssuesUrl: 'https://github.com/Anupam0401/Dhanrakshak-web/issues',
   
   // Contact
-  supportEmail: 'support@dhanrakshak.app',
+  supportEmail: 'dharakshak.app@gmail.com',
   
   // Social/OpenGraph
   ogImage: '/og-image.png',

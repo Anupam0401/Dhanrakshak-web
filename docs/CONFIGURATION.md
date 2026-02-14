@@ -50,7 +50,7 @@ This TypeScript file contains all configurable site settings with full type safe
 
 ```typescript
 {
-  supportEmail: 'support@dhanrakshak.app',
+  supportEmail: 'dharakshak.app@gmail.com',
 }
 ```
 
@@ -232,7 +232,7 @@ Files automatically updated:
 
 ```typescript
 // src/config/site.config.ts
-supportEmail: 'support@newdomain.com',
+supportEmail: 'your-new-email@example.com',
 ```
 
 Files automatically updated:
@@ -308,7 +308,7 @@ If you have hardcoded values in existing components:
 ### Before (Hardcoded):
 ```astro
 <h1>DhanRakshak</h1>
-<a href="mailto:support@dhanrakshak.app">Contact</a>
+<a href="mailto:dharakshak.app@gmail.com">Contact</a>
 ```
 
 ### After (Using Config):

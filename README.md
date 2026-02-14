@@ -127,7 +127,7 @@ Site-wide settings are managed in `src/config/site.config.ts`:
 ```typescript
 {
   name: 'DhanRakshak',
-  supportEmail: 'support@dhanrakshak.app',
+  supportEmail: 'dharakshak.app@gmail.com',
   playStoreUrl: 'https://play.google.com/store',
   // ... more settings
 }
@@ -165,7 +165,7 @@ This website is open source and available under the [MIT License](LICENSE).
 
 ## 📞 Contact
 
-- **Email:** [support@dhanrakshak.app](mailto:support@dhanrakshak.app)
+- **Email:** [dharakshak.app@gmail.com](mailto:dharakshak.app@gmail.com)
 - **Issues:** [GitHub Issues](https://github.com/Anupam0401/Dhanrakshak-web/issues)
 
 ## 🙏 Acknowledgments

@@ -224,7 +224,7 @@ The DhanRakshak website content follows the same principles as the app:
 - Include call-to-action
 
 **Examples:**
-- Home: "A privacy-first, local-first personal finance tracking app for Android. Track expenses, manage groups, set savings goals, and sync with Splitwise."
+- Home: "A privacy-first, local-first personal finance tracking app for Android. Track expenses, manage budgets, analyze spending patterns, and plan savings goals — all while keeping your data in your control."
 - Features: "Explore all the powerful features of DhanRakshak: expense tracking, group management, Splitwise sync, analytics, savings goals, and more."
 
 ### Headings (H1, H2, H3)
