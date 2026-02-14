@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+/* ============================================
+   Tailwind v4 Theme Configuration
+   ============================================ */
+@theme {
+  --color-primary: #2F4FA3;
+  --color-accent: #6E95FF;
+  --color-accent-light: #3B6CD4;
+  --color-success: #4EC28A;
+  --color-warning: #E6B85C;
+  --color-error: #D26A6A;
+  --color-logo-dark: #1E3A8A;
+  --color-logo-light: #2563EB;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+@variant dark (&:where(.dark, .dark *));
+
+/* ============================================
+   Theme Variables
+   ============================================ */
+:root {
+  --bg: #0F1115;
+  --bg-surface: #1A1E24;
+  --text-primary: #E6EAF0;
+  --text-secondary: #9AA3B2;
+  --border: #2A2F38;
+  --border-hover: rgba(110, 149, 255, 0.5);
+}
+
+html.light {
+  --bg: #F5F7FA;
+  --bg-surface: #FFFFFF;
+  --text-primary: #1A1E24;
+  --text-secondary: #5A6577;
+  --border: #D8DCE4;
+  --border-hover: rgba(47, 79, 163, 0.5);
+}
+
+/* ============================================
+   Base
+   ============================================ */
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg);
+  color: var(--text-primary);
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+/* ============================================
+   Theme Utilities
+   ============================================ */
+.bg-surface { background-color: var(--bg-surface); }
+.text-heading { color: var(--text-primary); }
+.text-body { color: var(--text-secondary); }
+.border-themed { border-color: var(--border); }
+
+/* Card */
+.card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+.card:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Gradients */
+.bg-hero-gradient { background: linear-gradient(135deg, #2F4FA3, #6E95FF); }
+.bg-logo-gradient { background: linear-gradient(135deg, #1E3A8A, #2563EB); }
+.bg-hero-subtle { background: radial-gradient(ellipse at 50% 0%, rgba(47, 79, 163, 0.15) 0%, transparent 60%); }
+
+/* Page header banner (Features, Contact, Privacy, Terms) */
+.page-header-banner {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+}
+.page-header-title { color: var(--text-primary); }
+.page-header-subtitle { color: var(--text-secondary); }
+
+/* ============================================
+   Prose (Privacy / Terms content)
+   ============================================ */
+.prose-themed { line-height: 1.75; }
+.prose-themed h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; color: var(--text-primary); }
+.prose-themed h3 { font-size: 1.25rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.75rem; color: var(--text-primary); }
+.prose-themed p { margin-bottom: 1rem; color: var(--text-secondary); }
+.prose-themed strong { color: var(--text-primary); font-weight: 600; }
+.prose-themed ul, .prose-themed ol { margin-bottom: 1rem; padding-left: 1.5rem; }
+.prose-themed li { margin-bottom: 0.5rem; color: var(--text-secondary); }
+.prose-themed a { color: var(--color-accent, #6E95FF); text-decoration: none; }
+.prose-themed a:hover { text-decoration: underline; }
+.prose-themed hr { border-color: var(--border); margin: 2rem 0; }
+.prose-themed em { color: var(--text-secondary); }
+
+/* ============================================
+   Navigation
+   ============================================ */
+.nav-link {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color 200ms ease, background-color 200ms ease;
+}
+.nav-link:hover { color: var(--text-primary); background-color: var(--bg-surface); }
+.nav-link-active { color: var(--color-accent, #6E95FF); background-color: var(--bg-surface); }
+
+/* ============================================
+   Screenshots
+   ============================================ */
+.hide-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+
+.device-frame {
+  aspect-ratio: 9 / 19.5;
+  border-radius: 1.75rem;
+  overflow: hidden;
+  box-shadow: 0 0 30px 4px rgba(47, 79, 163, 0.12), 0 16px 40px -8px rgba(0, 0, 0, 0.3);
+}
+.device-frame-light {
+  box-shadow: 0 0 30px 4px rgba(47, 79, 163, 0.08), 0 16px 40px -8px rgba(0, 0, 0, 0.1);
+}
+.device-frame img { width: 100%; height: 100%; object-fit: cover; border-radius: 1.75rem; }
+
+.ss-tab-active { background-color: var(--color-primary, #2F4FA3); color: white; }
+
+/* ============================================
+   Animations
+   ============================================ */
+@keyframes hero-fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-hero { animation: hero-fade-up 0.7s ease-out both; }
+.animate-hero-delay-1 { animation-delay: 0.1s; }
+.animate-hero-delay-2 { animation-delay: 0.25s; }
+.animate-hero-delay-3 { animation-delay: 0.4s; }
+.animate-hero-delay-4 { animation-delay: 0.55s; }
+
+.fade-in-up { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.fade-in-up.is-visible { opacity: 1; transform: translateY(0); }
+
+.stagger-1 { transition-delay: 0.05s; }
+.stagger-2 { transition-delay: 0.1s; }
+.stagger-3 { transition-delay: 0.15s; }
+.stagger-4 { transition-delay: 0.2s; }
+.stagger-5 { transition-delay: 0.25s; }
+
+.card-hover-lift { transition: transform 300ms ease, box-shadow 300ms ease, border-color 200ms ease; }
+.card-hover-lift:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18); }
+
+.icon-bounce:hover svg { animation: bounce-once 0.4s ease; }
+@keyframes bounce-once {
+  0%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-4px); }
+  60% { transform: translateY(-2px); }
+}

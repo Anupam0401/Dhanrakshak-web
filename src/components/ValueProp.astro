@@ -1,0 +1,69 @@
+---
+const base = import.meta.env.BASE_URL;
+
+const valueProps = [
+  {
+    icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>`,
+    title: 'Local-First Privacy',
+    description: 'Your financial data stays on your device. No tracking, no selling, complete control.',
+  },
+  {
+    icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></svg>`,
+    title: 'Smart Analytics',
+    description: 'Understand your spending patterns with beautiful charts and actionable insights.',
+  },
+  {
+    icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182"/></svg>`,
+    title: 'Recurring Expenses',
+    description: 'Track subscriptions and recurring payments automatically. Never miss a bill.',
+  },
+  {
+    icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>`,
+    title: 'Splitwise Integration',
+    description: 'Seamlessly sync your group expenses from Splitwise for unified tracking.',
+  },
+  {
+    icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z"/></svg>`,
+    title: 'Optional Cloud Sync',
+    description: 'Backup your data securely to the cloud when you want it, how you want it.',
+  },
+];
+---
+
+<section class="py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-heading">
+      Why DhanRakshak?
+    </h2>
+    <p class="text-center text-body mb-12 max-w-2xl mx-auto">
+      A personal finance app designed with your privacy and peace of mind as the top priority.
+    </p>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {valueProps.map((prop, i) => (
+        <div class={`group card card-hover-lift p-6 rounded-2xl fade-in-up stagger-${i + 1}`}>
+          <div class="mb-4 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-accent icon-bounce">
+            <Fragment set:html={prop.icon} />
+          </div>
+          <h3 class="text-lg font-semibold mb-2 text-heading group-hover:text-accent transition-colors duration-200">
+            {prop.title}
+          </h3>
+          <p class="text-sm text-body leading-relaxed">{prop.description}</p>
+        </div>
+      ))}
+    </div>
+    
+    <!-- Trust block -->
+    <div class="mt-16 card p-8 md:p-10 rounded-2xl text-center">
+      <h3 class="text-2xl font-bold mb-4 text-heading">Built on Trust and Transparency</h3>
+      <p class="text-body max-w-3xl mx-auto mb-6 leading-relaxed">
+        We believe financial apps should work for you, not against you. DhanRakshak is designed with a local-first approach, 
+        meaning your data lives on your device by default. Cloud sync is optional, and you're always in control.
+      </p>
+      <a href={`${base}privacy/`} class="text-accent hover:underline font-medium inline-flex items-center gap-1">
+        Read our Privacy Policy
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>

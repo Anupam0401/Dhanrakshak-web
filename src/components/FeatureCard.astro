@@ -1,0 +1,33 @@
+---
+interface Props {
+  icon: string;
+  title: string;
+  description: string;
+  screenshot?: string;
+  reverse?: boolean;
+}
+
+const { icon, title, description, screenshot, reverse = false } = Astro.props;
+---
+
+<div class:list={['grid md:grid-cols-2 gap-8 items-center fade-in-up', reverse && 'md:[direction:rtl] md:*:[direction:ltr]']}>
+  <!-- Content -->
+  <div>
+    <div class="mb-4 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-accent icon-bounce">
+      <Fragment set:html={icon} />
+    </div>
+    <h3 class="text-2xl font-bold mb-4 text-heading">{title}</h3>
+    <p class="text-body leading-relaxed">{description}</p>
+  </div>
+  
+  <!-- Screenshot -->
+  {screenshot && (
+    <div class="flex justify-center">
+      <div class="w-52 md:w-56">
+        <div class="device-frame">
+          <img src={screenshot} alt={`${title} screenshot`} loading="lazy" />
+        </div>
+      </div>
+    </div>
+  )}
+</div>

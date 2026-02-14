@@ -1,0 +1,140 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+}
+
+const base = import.meta.env.BASE_URL;
+
+const {
+  title = 'DhanRakshak - Personal finance, made simple and private',
+  description = 'A privacy-first, local-first personal finance tracking app for Android. Track expenses, manage groups, set savings goals, and sync with Splitwise.',
+  image = `${base}favicon.svg`,
+  noindex = false
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL(image, Astro.site);
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1E3A8A" />
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+    <link rel="apple-touch-icon" href={`${base}favicon.svg`} />
+    <link rel="manifest" href={`${base}site.webmanifest`} />
+    <meta name="generator" content={Astro.generator} />
+    
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={ogImage} />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "DhanRakshak",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Android",
+        "description": "A privacy-first, local-first personal finance tracking app for Android.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
+      }
+    </script>
+    
+    <!-- Theme: runs before paint to prevent flash -->
+    <script is:inline>
+      (function() {
+        var saved = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var isDark = saved ? saved === 'dark' : prefersDark;
+        if (isDark) {
+          document.documentElement.classList.add('dark');
+          document.documentElement.classList.remove('light');
+        } else {
+          document.documentElement.classList.add('light');
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <slot />
+    
+    <!-- Scroll-triggered animations -->
+    <script is:inline>
+      (function() {
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.fade-in-up').forEach(function(el) {
+          observer.observe(el);
+        });
+      })();
+    </script>
+    
+    <!-- Theme toggle script — handles ALL .theme-toggle-btn instances -->
+    <script is:inline>
+      (function() {
+        function syncIcons() {
+          var isDark = document.documentElement.classList.contains('dark');
+          document.querySelectorAll('.theme-icon-sun').forEach(function(el) {
+            el.style.display = isDark ? 'block' : 'none';
+          });
+          document.querySelectorAll('.theme-icon-moon').forEach(function(el) {
+            el.style.display = isDark ? 'none' : 'block';
+          });
+        }
+
+        syncIcons();
+
+        document.querySelectorAll('.theme-toggle-btn').forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            var html = document.documentElement;
+            var isDark = html.classList.contains('dark');
+            if (isDark) {
+              html.classList.remove('dark');
+              html.classList.add('light');
+              localStorage.setItem('theme', 'light');
+            } else {
+              html.classList.remove('light');
+              html.classList.add('dark');
+              localStorage.setItem('theme', 'dark');
+            }
+            syncIcons();
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>

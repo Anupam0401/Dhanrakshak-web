@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import ScreenshotShowcase from '../components/ScreenshotShowcase.astro';
+import ValueProp from '../components/ValueProp.astro';
+import CTABanner from '../components/CTABanner.astro';
+---
+
+<BaseLayout
+  title="DhanRakshak - Personal finance, made simple and private"
+  description="A privacy-first, local-first personal finance tracking app for Android. Track expenses, manage groups, set savings goals, and sync with Splitwise."
+>
+  <Header />
+  
+  <main>
+    <Hero />
+    <ScreenshotShowcase />
+    <ValueProp />
+    <CTABanner />
+  </main>
+  
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,97 @@
+---
+const base = import.meta.env.BASE_URL;
+
+const darkScreenshots = [
+  { src: `${base}screenshots/dark/home.png`, label: 'Home Dashboard' },
+  { src: `${base}screenshots/dark/activity.png`, label: 'Activity Feed' },
+  { src: `${base}screenshots/dark/groups.png`, label: 'Groups & Splitwise' },
+  { src: `${base}screenshots/dark/analytics.png`, label: 'Smart Analytics' },
+  { src: `${base}screenshots/dark/savings.png`, label: 'Savings Goals' },
+  { src: `${base}screenshots/dark/features-guide.png`, label: 'Features Guide' },
+];
+
+const lightScreenshots = [
+  { src: `${base}screenshots/light/home.png`, label: 'Home Dashboard' },
+  { src: `${base}screenshots/light/activity.png`, label: 'Activity Feed' },
+  { src: `${base}screenshots/light/groups.png`, label: 'Groups & Splitwise' },
+  { src: `${base}screenshots/light/analytics.png`, label: 'Smart Analytics' },
+  { src: `${base}screenshots/light/savings.png`, label: 'Savings Goals' },
+  { src: `${base}screenshots/light/features-guide.png`, label: 'Features Guide' },
+];
+---
+
+<section class="py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-heading fade-in-up">
+      Beautiful, Intuitive Design
+    </h2>
+    <p class="text-center text-body mb-10 max-w-2xl mx-auto fade-in-up stagger-1">
+      A clean, modern interface with both dark and light themes that makes managing your finances a pleasure.
+    </p>
+    
+    <!-- Theme tab switcher -->
+    <div class="flex justify-center mb-8">
+      <div class="inline-flex rounded-xl p-1 bg-surface card" style="border: none;">
+        <button id="tab-dark" class="ss-tab ss-tab-active px-5 py-2 rounded-lg text-sm font-semibold transition-all duration-200 cursor-pointer">
+          Dark Mode
+        </button>
+        <button id="tab-light" class="ss-tab px-5 py-2 rounded-lg text-sm font-semibold transition-all duration-200 cursor-pointer text-body">
+          Light Mode
+        </button>
+      </div>
+    </div>
+    
+    <!-- Dark screenshots -->
+    <div id="ss-dark" class="overflow-x-auto pb-6 hide-scrollbar">
+      <div class="flex gap-6 justify-start md:justify-center px-4" style="min-width: min-content;">
+        {darkScreenshots.map(({ src, label }) => (
+          <div class="flex-shrink-0 w-48 md:w-52">
+            <div class="device-frame">
+              <img src={src} alt={`DhanRakshak ${label} - Dark Mode`} loading="lazy" />
+            </div>
+            <p class="text-center mt-3 text-xs text-body font-medium">{label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+    
+    <!-- Light screenshots -->
+    <div id="ss-light" class="overflow-x-auto pb-6 hide-scrollbar hidden">
+      <div class="flex gap-6 justify-start md:justify-center px-4" style="min-width: min-content;">
+        {lightScreenshots.map(({ src, label }) => (
+          <div class="flex-shrink-0 w-48 md:w-52">
+            <div class="device-frame device-frame-light">
+              <img src={src} alt={`DhanRakshak ${label} - Light Mode`} loading="lazy" />
+            </div>
+            <p class="text-center mt-3 text-xs text-body font-medium">{label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  (function() {
+    var tabDark = document.getElementById('tab-dark');
+    var tabLight = document.getElementById('tab-light');
+    var ssDark = document.getElementById('ss-dark');
+    var ssLight = document.getElementById('ss-light');
+    if (!tabDark || !tabLight || !ssDark || !ssLight) return;
+
+    function activate(tab, panel) {
+      tabDark.classList.remove('ss-tab-active');
+      tabLight.classList.remove('ss-tab-active');
+      tabDark.classList.add('text-body');
+      tabLight.classList.add('text-body');
+      tab.classList.add('ss-tab-active');
+      tab.classList.remove('text-body');
+      ssDark.classList.add('hidden');
+      ssLight.classList.add('hidden');
+      panel.classList.remove('hidden');
+    }
+
+    tabDark.addEventListener('click', function() { activate(tabDark, ssDark); });
+    tabLight.addEventListener('click', function() { activate(tabLight, ssLight); });
+  })();
+</script>

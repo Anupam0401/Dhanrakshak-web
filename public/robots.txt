@@ -1,0 +1,6 @@
+# robots.txt for DhanRakshak
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://anupam0401.github.io/Dhanrakshak-web/sitemap-index.xml

@@ -1,0 +1,16 @@
+{
+  "name": "DhanRakshak",
+  "short_name": "DhanRakshak",
+  "description": "Personal finance, made simple and private",
+  "start_url": "/Dhanrakshak-web/",
+  "display": "standalone",
+  "background_color": "#0F1115",
+  "theme_color": "#1E3A8A",
+  "icons": [
+    {
+      "src": "/Dhanrakshak-web/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

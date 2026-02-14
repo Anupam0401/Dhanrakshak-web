@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:android="http://schemas.android.com/apk/res/android" width="108dp" height="108dp" viewportWidth="108" viewportHeight="108">
+	<path name="shield_outline" d="M54,28 L68,32 L68,52 C68,64 60,71 54,76 C48,71 40,64 40,52 L40,32 Z" stroke-width="3.5" stroke="#FFFFFF" strokeLineCap="round" strokeLineJoin="round" fill="@color/transparent"/>
+	<path name="rupee_line_top" d="M47,42 L61,42" stroke-width="3" stroke="#FFFFFF" strokeLineCap="round"/>
+	<path name="rupee_line_middle" d="M47,47 L61,47" stroke-width="3" stroke="#FFFFFF" strokeLineCap="round"/>
+	<path name="rupee_curve" d="M50,47 L50,55 C50,58 52,61 56,61 L60,61" stroke-width="3" stroke="#FFFFFF" strokeLineCap="round" fill="@color/transparent"/>
+</svg>

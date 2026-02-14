@@ -1,0 +1,116 @@
+---
+import { siteConfig } from '../config/site.config';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Privacy Policy - DhanRakshak"
+  description="DhanRakshak Privacy Policy - Learn how we protect your financial data with a local-first, privacy-focused approach."
+>
+  <Header />
+  
+  <main class="min-h-screen pt-16 pb-20">
+    <!-- Header -->
+    <div class="page-header-banner">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20">
+        <div class="flex items-center gap-4 mb-3">
+          <div class="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center text-accent">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+          </div>
+          <div>
+            <h1 class="text-3xl md:text-4xl font-bold page-header-title">Privacy Policy</h1>
+            <p class="text-sm page-header-subtitle mt-1">How we protect your data</p>
+          </div>
+        </div>
+        <p class="text-xs page-header-subtitle mt-4 ml-[3.75rem]">Last updated: {siteConfig.lastPrivacyUpdate}</p>
+      </div>
+    </div>
+    
+    <!-- Content -->
+    <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 prose-themed">
+      <p>DhanRakshak is designed with a <strong>privacy-first, local-first</strong> approach. Your financial data belongs to you and is stored securely on your device.</p>
+      
+      <h2>1. Data Storage</h2>
+      <p>By default, all financial data (expenses, savings, analytics, etc.) is <strong>stored locally on your device</strong>.</p>
+      <p>No personal financial data is transmitted to any external server unless you explicitly enable a feature that requires it.</p>
+      
+      <h2>2. Cloud Sync (Optional)</h2>
+      <p>If you sign in and enable Cloud Sync:</p>
+      <ul>
+        <li>Your personal app data may be securely backed up to the cloud.</li>
+        <li>This includes expenses, categories, savings goals, and preferences.</li>
+        <li>Data is <strong>encrypted in transit and stored securely</strong>.</li>
+        <li>You may disable cloud sync at any time from the app settings.</li>
+      </ul>
+      
+      <h2>3. Splitwise Integration (Optional)</h2>
+      <p>If you connect your Splitwise account:</p>
+      <ul>
+        <li>DhanRakshak accesses only the data required to display your groups and expenses.</li>
+        <li>Splitwise data is <strong>not stored permanently</strong> in our systems.</li>
+        <li>It is used only to display synced information inside the app.</li>
+        <li>You may disconnect your Splitwise account at any time.</li>
+      </ul>
+      
+      <h2>4. Analytics & Tracking</h2>
+      <p>DhanRakshak <strong>does not collect personal analytics</strong> or track user behavior across apps or websites.</p>
+      <p>Any insights shown in the app are <strong>computed locally on your device</strong>.</p>
+      
+      <h2>5. Permissions</h2>
+      <p>The app may request permissions for:</p>
+      <ul>
+        <li><strong>File access</strong> (for importing bank statements)</li>
+        <li><strong>Notifications</strong> (for reminders & budget alerts)</li>
+        <li><strong>Network access</strong> (for cloud sync and integrations)</li>
+      </ul>
+      <p>Permissions are only used for their intended functionality.</p>
+      
+      <h2>6. Your Control</h2>
+      <p>You can:</p>
+      <ul>
+        <li>Delete your local data anytime from the app</li>
+        <li>Disable cloud sync and delete cloud backups</li>
+        <li>Disconnect third-party integrations (Splitwise)</li>
+        <li>Export or clear app data</li>
+      </ul>
+      
+      <h2>7. Data Security</h2>
+      <ul>
+        <li>All sensitive data stored locally is encrypted</li>
+        <li>Cloud backups use industry-standard encryption</li>
+        <li>We do not sell, rent, or share your personal data with third parties</li>
+        <li>Authentication is handled securely using industry standards</li>
+      </ul>
+      
+      <h2>8. Third-Party Services</h2>
+      <p>DhanRakshak may integrate with third-party services such as:</p>
+      <ul>
+        <li><strong>Splitwise</strong> (for group expense management)</li>
+        <li><strong>Google Sign-In</strong> (for authentication)</li>
+      </ul>
+      <p>When you use these services, their respective privacy policies also apply. We recommend reviewing:</p>
+      <ul>
+        <li><a href="https://www.splitwise.com/privacy" target="_blank" rel="noopener noreferrer">Splitwise Privacy Policy</a></li>
+        <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a></li>
+      </ul>
+      
+      <h2>9. Children's Privacy</h2>
+      <p>DhanRakshak is not intended for use by children under 13 years of age. We do not knowingly collect personal information from children.</p>
+      
+      <h2>10. Changes to This Policy</h2>
+      <p>This policy may be updated as features evolve. We will notify users of significant changes through the app or website.</p>
+      
+      <h2>11. Contact</h2>
+      <p>If you have questions about privacy or data handling, contact us at:</p>
+      <p><strong>Email:</strong> <a href={`mailto:${siteConfig.supportEmail}`}>{siteConfig.supportEmail}</a></p>
+      <p><strong>GitHub Issues:</strong> <a href={siteConfig.githubIssuesUrl} target="_blank" rel="noopener noreferrer">{siteConfig.githubIssuesUrl}</a></p>
+      
+      <hr />
+      <p><em>Last updated: {siteConfig.lastPrivacyUpdate}</em></p>
+    </article>
+  </main>
+  
+  <Footer />
+</BaseLayout>
