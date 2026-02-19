@@ -14,7 +14,7 @@ export const siteConfig = {
   // URLs
   url: 'https://anupam0401.github.io',
   baseUrl: '/Dhanrakshak-web',
-  playStoreUrl: 'https://play.google.com/store', // TODO: Update with actual Play Store URL
+  playStoreUrl: 'https://play.google.com/store/apps/details?id=com.anupam.dhanrakshak', // TODO: Update with actual Play Store URL
   githubUrl: 'https://github.com/Anupam0401/Dhanrakshak-web',
   githubIssuesUrl: 'https://github.com/Anupam0401/Dhanrakshak-web/issues',
   
@@ -26,7 +26,7 @@ export const siteConfig = {
   twitterHandle: '@dhanrakshak', // Optional: Add if you have a Twitter account
   
   // App Info
-  version: 'v1.0.0',
+  version: 'v1.0.4',
   releaseDate: '2026',
   platform: 'Android',
   
