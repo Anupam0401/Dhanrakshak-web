@@ -38,7 +38,7 @@ export const siteConfig = {
     },
     groups: {
       title: 'Groups & Splitwise Sync',
-      description: 'Manage shared expenses with friends, roommates, or family. Seamlessly sync with your existing Splitwise groups.',
+      description: 'View shared expenses with friends, roommates, or family. Seamlessly sync with your existing Splitwise groups.',
     },
     recurring: {
       title: 'Recurring Expense Management',
