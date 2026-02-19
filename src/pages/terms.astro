@@ -3,6 +3,8 @@ import { siteConfig } from '../config/site.config';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
@@ -113,8 +115,9 @@ import Footer from '../components/Footer.astro';
       <p>DhanRakshak and its original content, features, and functionality are owned by the developers and are protected by international copyright, trademark, and other intellectual property laws.</p>
       <p>The app may include open-source components licensed under their respective licenses.</p>
       
-      <h2>11. Termination</h2>
+      <h2>11. Termination & Account Deletion</h2>
       <p>You may stop using DhanRakshak at any time by uninstalling the app from your device.</p>
+      <p>You can delete all your data (local and cloud) at any time from within the app. For detailed instructions on how to delete your account and all associated data, see our <a href={`${base}delete-account/`}>Account & Data Deletion</a> page.</p>
       <p>We reserve the right to terminate or suspend access to the app for users who violate these terms.</p>
       
       <h2>12. Governing Law</h2>

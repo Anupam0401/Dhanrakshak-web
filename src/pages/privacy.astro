@@ -3,6 +3,8 @@ import { siteConfig } from '../config/site.config';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
@@ -74,6 +76,7 @@ import Footer from '../components/Footer.astro';
         <li>Disable cloud sync and delete cloud backups</li>
         <li>Disconnect third-party integrations (Splitwise)</li>
         <li>Export or clear app data</li>
+        <li>Delete your account and all associated data — see <a href={`${base}delete-account/`}>Account & Data Deletion</a></li>
       </ul>
       
       <h2>7. Data Security</h2>

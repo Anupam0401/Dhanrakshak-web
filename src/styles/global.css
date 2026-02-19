@@ -98,6 +98,35 @@ body {
 .prose-themed hr { border-color: var(--border); margin: 2rem 0; }
 .prose-themed em { color: var(--text-secondary); }
 
+.prose-themed table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.875rem;
+}
+.prose-themed thead th {
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-primary);
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid var(--border);
+}
+.prose-themed tbody td {
+  padding: 0.75rem 1rem;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
+}
+.prose-themed tbody tr:last-child td {
+  border-bottom: none;
+}
+.prose-themed tbody td a {
+  color: var(--color-accent, #6E95FF);
+  text-decoration: none;
+}
+.prose-themed tbody td a:hover {
+  text-decoration: underline;
+}
+
 /* ============================================
    Navigation
    ============================================ */
